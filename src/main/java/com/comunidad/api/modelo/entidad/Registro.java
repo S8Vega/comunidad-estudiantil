@@ -25,7 +25,7 @@ public class Registro implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@ManyToOne
-	@JoinColumn
+	@JoinColumn(name = "persona")
 	@JsonIgnoreProperties(value = { "registro" }, allowSetters = true)
 	private Basico persona;
 	private Date fecha;

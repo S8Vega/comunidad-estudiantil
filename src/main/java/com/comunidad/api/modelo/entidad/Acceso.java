@@ -22,7 +22,7 @@ public class Acceso implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@ManyToOne
-	@JoinColumn
+	@JoinColumn(name = "registro")
 	@JsonIgnoreProperties(value = { "acceso" }, allowSetters = true)
 	private Registro registro;
 	@Column(name = "fechareg")

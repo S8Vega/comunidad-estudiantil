@@ -23,7 +23,7 @@ public class Tipo implements Serializable {
 	private Long id;
 	private String descripcion;
 	@ManyToOne
-	@JoinColumn
+	@JoinColumn(name = "empresa")
 	@JsonIgnoreProperties(value = { "tipo" }, allowSetters = true)
 	private Empresa empresa;
 	@OneToMany(mappedBy = "tipo")

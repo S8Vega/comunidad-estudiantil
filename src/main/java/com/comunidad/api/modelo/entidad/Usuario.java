@@ -20,14 +20,14 @@ public class Usuario implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@ManyToOne
-	@JoinColumn
+	@JoinColumn(name = "empresa")
 	@JsonIgnoreProperties(value = { "usuario" }, allowSetters = true)
 	private Empresa empresa;
 	private String usuario;
 	private String email;
 	private String clave;
 	@ManyToOne
-	@JoinColumn
+	@JoinColumn(name = "rol")
 	@JsonIgnoreProperties(value = { "usuario" }, allowSetters = true)
 	private Rol rol;
 	private static final long serialVersionUID = 1L;

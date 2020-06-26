@@ -32,15 +32,15 @@ public class Basico implements Serializable {
 	private Date fechaNacimiento;
 	private String genero;
 	@ManyToOne
-	@JoinColumn
+	@JoinColumn(name = "eps")
 	@JsonIgnoreProperties(value = { "basico" }, allowSetters = true)
 	private Eps eps;
 	@ManyToOne
-	@JoinColumn
+	@JoinColumn(name = "modalidad")
 	@JsonIgnoreProperties(value = { "basico" }, allowSetters = true)
 	private Modalidad modalidad;
 	@ManyToOne
-	@JoinColumn
+	@JoinColumn(name = "tipo")
 	@JsonIgnoreProperties(value = { "basico" }, allowSetters = true)
 	private Tipo tipo;
 	private Boolean embarazo;
@@ -55,7 +55,7 @@ public class Basico implements Serializable {
 	private Date fechaReg;
 	@OneToOne(mappedBy = "id", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties(value = { "id" }, allowSetters = true)
-	Set<Cormobilidad> cormobilidad;
+	Cormobilidad cormobilidad;
 	@OneToMany(mappedBy = "persona", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties(value = { "persona" }, allowSetters = true)
 	Set<Registro> registro;
@@ -67,7 +67,7 @@ public class Basico implements Serializable {
 
 	public Basico(Long id, String documento, String nombre, String telefono, Date fechaNacimiento, String genero,
 			Eps eps, Modalidad modalidad, Tipo tipo, Boolean embarazo, String contactoNombre, String contactoTelefono,
-			Boolean mas60, Boolean menos15, Boolean salud, Date fechaReg, Set<Cormobilidad> cormobilidad,
+			Boolean mas60, Boolean menos15, Boolean salud, Date fechaReg, Cormobilidad cormobilidad,
 			Set<Registro> registro) {
 		super();
 		this.id = id;
@@ -227,11 +227,11 @@ public class Basico implements Serializable {
 		this.fechaReg = fechaReg;
 	}
 
-	public Set<Cormobilidad> getCormobilidad() {
+	public Cormobilidad getCormobilidad() {
 		return cormobilidad;
 	}
 
-	public void setCormobilidad(Set<Cormobilidad> cormobilidad) {
+	public void setCormobilidad(Cormobilidad cormobilidad) {
 		this.cormobilidad = cormobilidad;
 	}
 

@@ -18,7 +18,7 @@ public class Cormobilidad implements Serializable {
 
 	@Id
 	@OneToOne
-	@JoinColumn
+	@JoinColumn(name = "id")
 	@JsonIgnoreProperties(value = { "cormobilidad" }, allowSetters = true)
 	private Basico id;
 	private Boolean diabetes;

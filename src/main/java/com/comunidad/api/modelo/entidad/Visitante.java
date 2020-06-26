@@ -31,7 +31,7 @@ public class Visitante implements Serializable {
 	private Long eps;
 	private String genero;
 	@ManyToOne
-	@JoinColumn
+	@JoinColumn(name = "empresa")
 	@JsonIgnoreProperties(value = { "visitante" }, allowSetters = true)
 	private Empresa empresa;
 	@OneToMany(mappedBy = "visitante", cascade = CascadeType.REMOVE)

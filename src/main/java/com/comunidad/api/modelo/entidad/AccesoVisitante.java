@@ -23,7 +23,7 @@ public class AccesoVisitante implements Serializable {
 	private Date fecha;
 	private Long temperatura;
 	@ManyToOne
-	@JoinColumn
+	@JoinColumn(name = "visitante")
 	@JsonIgnoreProperties(value = { "accesoVisitante" }, allowSetters = true)
 	private Visitante visitante;
 	private static final long serialVersionUID = 1L;
