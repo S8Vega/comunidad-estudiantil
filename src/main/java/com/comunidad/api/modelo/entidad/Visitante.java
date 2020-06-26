@@ -23,12 +23,12 @@ public class Visitante implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Integer id;
 	private String documento;
 	private String nombre;
 	@Column(name = "fechanacimiento")
 	private Date fechaNacimiento;
-	private Long eps;
+	private Integer eps;
 	private String genero;
 	@ManyToOne
 	@JoinColumn(name = "empresa")
@@ -43,7 +43,7 @@ public class Visitante implements Serializable {
 		super();
 	}
 
-	public Visitante(Long id, String documento, String nombre, Date fechaNacimiento, Long eps, String genero,
+	public Visitante(Integer id, String documento, String nombre, Date fechaNacimiento, Integer eps, String genero,
 			Empresa empresa, Set<AccesoVisitante> accesoVisitante) {
 		super();
 		this.id = id;
@@ -63,11 +63,11 @@ public class Visitante implements Serializable {
 				+ ", accesoVisitante=" + accesoVisitante + "]";
 	}
 
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -95,11 +95,11 @@ public class Visitante implements Serializable {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
-	public Long getEps() {
+	public Integer getEps() {
 		return eps;
 	}
 
-	public void setEps(Long eps) {
+	public void setEps(Integer eps) {
 		this.eps = eps;
 	}
 

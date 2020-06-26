@@ -19,7 +19,7 @@ public class Empresa implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Integer id;
 	private String nombre;
 	private String endpoint;
 	private Boolean estado;
@@ -39,7 +39,7 @@ public class Empresa implements Serializable {
 		super();
 	}
 
-	public Empresa(Long id, String nombre, String endpoint, Boolean estado, String code, Set<Usuario> usuario,
+	public Empresa(Integer id, String nombre, String endpoint, Boolean estado, String code, Set<Usuario> usuario,
 			Set<Tipo> tipo, Set<Visitante> visitante) {
 		super();
 		this.id = id;
@@ -58,11 +58,11 @@ public class Empresa implements Serializable {
 				+ code + ", usuario=" + usuario + ", tipo=" + tipo + ", visitante=" + visitante + "]";
 	}
 
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

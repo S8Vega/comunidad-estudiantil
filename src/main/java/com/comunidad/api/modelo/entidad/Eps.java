@@ -19,7 +19,7 @@ public class Eps implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Integer id;
 	private String descripcion;
 	@OneToMany(mappedBy = "eps", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties(value = { "eps" }, allowSetters = true)
@@ -30,7 +30,7 @@ public class Eps implements Serializable {
 		super();
 	}
 
-	public Eps(Long id, String descripcion, Set<Basico> basico) {
+	public Eps(Integer id, String descripcion, Set<Basico> basico) {
 		super();
 		this.id = id;
 		this.descripcion = descripcion;
@@ -42,11 +42,11 @@ public class Eps implements Serializable {
 		return "Eps [id=" + id + ", descripcion=" + descripcion + ", basico=" + basico + "]";
 	}
 
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

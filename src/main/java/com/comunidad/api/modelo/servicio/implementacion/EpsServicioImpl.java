@@ -11,11 +11,11 @@ import com.comunidad.api.modelo.entidad.Eps;
 import com.comunidad.api.modelo.servicio.interfaz.IServicio;
 
 @Service("EpsServicioImpl")
-public class EpsServicioImpl implements IServicio<Eps, Long> {
+public class EpsServicioImpl implements IServicio<Eps, Integer> {
 
 	@Autowired
 	private IEpsDao epsDao;
-	
+
 	@Override
 	@Transactional(readOnly = true)
 	public List<Eps> findAll() {
@@ -30,12 +30,12 @@ public class EpsServicioImpl implements IServicio<Eps, Long> {
 
 	@Override
 	@Transactional(readOnly = true)
-	public Eps findById(Long id) {
+	public Eps findById(Integer id) {
 		return this.epsDao.findById(id).orElse(null);
 	}
 
 	@Override
-	public void deleteById(Long id) {
+	public void deleteById(Integer id) {
 		this.epsDao.deleteById(id);
 	}
 

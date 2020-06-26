@@ -4,6 +4,6 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.comunidad.api.modelo.entidad.AccesoVisitante;
 
-public interface IAccesoVisitanteDao extends CrudRepository<AccesoVisitante, Long> {
+public interface IAccesoVisitanteDao extends CrudRepository<AccesoVisitante, Integer> {
 
 }

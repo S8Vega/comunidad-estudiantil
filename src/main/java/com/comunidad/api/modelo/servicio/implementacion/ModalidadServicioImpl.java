@@ -11,11 +11,11 @@ import com.comunidad.api.modelo.entidad.Modalidad;
 import com.comunidad.api.modelo.servicio.interfaz.IServicio;
 
 @Service("ModalidadServicioImpl")
-public class ModalidadServicioImpl implements IServicio<Modalidad, Long> {
+public class ModalidadServicioImpl implements IServicio<Modalidad, Integer> {
 
 	@Autowired
 	private IModalidadDao modalidadDao;
-	
+
 	@Override
 	@Transactional(readOnly = true)
 	public List<Modalidad> findAll() {
@@ -30,12 +30,12 @@ public class ModalidadServicioImpl implements IServicio<Modalidad, Long> {
 
 	@Override
 	@Transactional(readOnly = true)
-	public Modalidad findById(Long id) {
+	public Modalidad findById(Integer id) {
 		return this.modalidadDao.findById(id).orElse(null);
 	}
 
 	@Override
-	public void deleteById(Long id) {
+	public void deleteById(Integer id) {
 		this.modalidadDao.deleteById(id);
 	}
 

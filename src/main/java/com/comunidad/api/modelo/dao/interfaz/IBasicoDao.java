@@ -4,6 +4,6 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.comunidad.api.modelo.entidad.Basico;
 
-public interface IBasicoDao extends CrudRepository<Basico, Long> {
+public interface IBasicoDao extends CrudRepository<Basico, Integer> {
 
 }

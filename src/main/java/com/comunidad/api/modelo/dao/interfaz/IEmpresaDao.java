@@ -4,6 +4,6 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.comunidad.api.modelo.entidad.Empresa;
 
-public interface IEmpresaDao extends CrudRepository<Empresa, Long> {
+public interface IEmpresaDao extends CrudRepository<Empresa, Integer> {
 
 }

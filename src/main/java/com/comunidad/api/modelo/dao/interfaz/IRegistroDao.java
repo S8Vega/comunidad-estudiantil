@@ -4,6 +4,6 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.comunidad.api.modelo.entidad.Registro;
 
-public interface IRegistroDao extends CrudRepository<Registro, Long> {
+public interface IRegistroDao extends CrudRepository<Registro, Integer> {
 
 }

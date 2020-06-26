@@ -19,9 +19,9 @@ public class AccesoVisitante implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Integer id;
 	private Date fecha;
-	private Long temperatura;
+	private Integer temperatura;
 	@ManyToOne
 	@JoinColumn(name = "visitante")
 	@JsonIgnoreProperties(value = { "accesoVisitante" }, allowSetters = true)
@@ -32,7 +32,7 @@ public class AccesoVisitante implements Serializable {
 		super();
 	}
 
-	public AccesoVisitante(Long id, Date fecha, Long temperatura, Visitante visitante) {
+	public AccesoVisitante(Integer id, Date fecha, Integer temperatura, Visitante visitante) {
 		super();
 		this.id = id;
 		this.fecha = fecha;
@@ -46,11 +46,11 @@ public class AccesoVisitante implements Serializable {
 				+ visitante + "]";
 	}
 
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -62,11 +62,11 @@ public class AccesoVisitante implements Serializable {
 		this.fecha = fecha;
 	}
 
-	public Long getTemperatura() {
+	public Integer getTemperatura() {
 		return temperatura;
 	}
 
-	public void setTemperatura(Long temperatura) {
+	public void setTemperatura(Integer temperatura) {
 		this.temperatura = temperatura;
 	}
 

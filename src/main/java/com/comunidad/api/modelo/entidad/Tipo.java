@@ -20,7 +20,7 @@ public class Tipo implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Integer id;
 	private String descripcion;
 	@ManyToOne
 	@JoinColumn(name = "empresa")
@@ -35,7 +35,7 @@ public class Tipo implements Serializable {
 		super();
 	}
 
-	public Tipo(Long id, String descripcion, Empresa empresa, Set<Basico> basico) {
+	public Tipo(Integer id, String descripcion, Empresa empresa, Set<Basico> basico) {
 		super();
 		this.id = id;
 		this.descripcion = descripcion;
@@ -48,11 +48,11 @@ public class Tipo implements Serializable {
 		return "Tipo [id=" + id + ", descripcion=" + descripcion + ", empresa=" + empresa + ", basico=" + basico + "]";
 	}
 
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

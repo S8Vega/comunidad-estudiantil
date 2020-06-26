@@ -11,11 +11,11 @@ import com.comunidad.api.modelo.entidad.Registro;
 import com.comunidad.api.modelo.servicio.interfaz.IServicio;
 
 @Service("RegistroServicioImpl")
-public class RegistroServicioImpl implements IServicio<Registro, Long> {
+public class RegistroServicioImpl implements IServicio<Registro, Integer> {
 
 	@Autowired
 	private IRegistroDao registroDao;
-	
+
 	@Override
 	@Transactional(readOnly = true)
 	public List<Registro> findAll() {
@@ -30,12 +30,12 @@ public class RegistroServicioImpl implements IServicio<Registro, Long> {
 
 	@Override
 	@Transactional(readOnly = true)
-	public Registro findById(Long id) {
+	public Registro findById(Integer id) {
 		return this.registroDao.findById(id).orElse(null);
 	}
 
 	@Override
-	public void deleteById(Long id) {
+	public void deleteById(Integer id) {
 		this.registroDao.deleteById(id);
 	}
 

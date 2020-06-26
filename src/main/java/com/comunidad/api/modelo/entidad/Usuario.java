@@ -18,7 +18,7 @@ public class Usuario implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Integer id;
 	@ManyToOne
 	@JoinColumn(name = "empresa")
 	@JsonIgnoreProperties(value = { "usuario" }, allowSetters = true)
@@ -36,7 +36,7 @@ public class Usuario implements Serializable {
 		super();
 	}
 
-	public Usuario(Long id, Empresa empresa, String usuario, String email, String clave, Rol rol) {
+	public Usuario(Integer id, Empresa empresa, String usuario, String email, String clave, Rol rol) {
 		super();
 		this.id = id;
 		this.empresa = empresa;
@@ -52,11 +52,11 @@ public class Usuario implements Serializable {
 				+ clave + ", rol=" + rol + "]";
 	}
 
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

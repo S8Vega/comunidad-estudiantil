@@ -11,11 +11,11 @@ import com.comunidad.api.modelo.entidad.Empresa;
 import com.comunidad.api.modelo.servicio.interfaz.IServicio;
 
 @Service("EmpresaServicioImpl")
-public class EmpresaServicioImpl implements IServicio<Empresa, Long> {
+public class EmpresaServicioImpl implements IServicio<Empresa, Integer> {
 
 	@Autowired
 	private IEmpresaDao empresaDao;
-	
+
 	@Override
 	@Transactional(readOnly = true)
 	public List<Empresa> findAll() {
@@ -30,12 +30,12 @@ public class EmpresaServicioImpl implements IServicio<Empresa, Long> {
 
 	@Override
 	@Transactional(readOnly = true)
-	public Empresa findById(Long id) {
+	public Empresa findById(Integer id) {
 		return this.empresaDao.findById(id).orElse(null);
 	}
 
 	@Override
-	public void deleteById(Long id) {
+	public void deleteById(Integer id) {
 		this.empresaDao.deleteById(id);
 	}
 

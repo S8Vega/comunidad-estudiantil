@@ -19,7 +19,7 @@ public class Rol implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Integer id;
 	private String descripcion;
 	@OneToMany(mappedBy = "rol", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties(value = { "rol" }, allowSetters = true)
@@ -30,7 +30,7 @@ public class Rol implements Serializable {
 		super();
 	}
 
-	public Rol(Long id, String descripcion, Set<Usuario> usuario) {
+	public Rol(Integer id, String descripcion, Set<Usuario> usuario) {
 		super();
 		this.id = id;
 		this.descripcion = descripcion;
@@ -42,11 +42,11 @@ public class Rol implements Serializable {
 		return "Rol [id=" + id + ", descripcion=" + descripcion + ", usuario=" + usuario + "]";
 	}
 
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

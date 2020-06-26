@@ -23,7 +23,7 @@ public class Registro implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Integer id;
 	@ManyToOne
 	@JoinColumn(name = "persona")
 	@JsonIgnoreProperties(value = { "registro" }, allowSetters = true)
@@ -35,6 +35,7 @@ public class Registro implements Serializable {
 	private Boolean nasal;
 	private Boolean garganta;
 	private Boolean dificultad;
+	@Column(columnDefinition = "Decimal(3,1) default '0.00'")
 	private Double temperatura;
 	@Column(name = "fechareg")
 	private Date fechaReg;
@@ -48,8 +49,8 @@ public class Registro implements Serializable {
 		super();
 	}
 
-	public Registro(Long id, Basico persona, Date fecha, Boolean tos, Boolean malestar, Boolean fatiga, Boolean nasal,
-			Boolean garganta, Boolean dificultad, Double temperatura, Date fechaReg, Boolean covid,
+	public Registro(Integer id, Basico persona, Date fecha, Boolean tos, Boolean malestar, Boolean fatiga,
+			Boolean nasal, Boolean garganta, Boolean dificultad, Double temperatura, Date fechaReg, Boolean covid,
 			Set<Acceso> acceso) {
 		super();
 		this.id = id;
@@ -83,11 +84,11 @@ public class Registro implements Serializable {
 		this.acceso = acceso;
 	}
 
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

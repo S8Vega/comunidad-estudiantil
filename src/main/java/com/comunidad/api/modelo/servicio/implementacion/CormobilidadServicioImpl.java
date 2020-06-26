@@ -16,7 +16,7 @@ public class CormobilidadServicioImpl implements IServicio<Cormobilidad, Basico>
 
 	@Autowired
 	private ICormobilidadDao cormobilidadDao;
-	
+
 	@Override
 	@Transactional(readOnly = true)
 	public List<Cormobilidad> findAll() {

@@ -11,11 +11,11 @@ import com.comunidad.api.modelo.entidad.Usuario;
 import com.comunidad.api.modelo.servicio.interfaz.IServicio;
 
 @Service("UsuarioServicioImpl")
-public class UsuarioServicioImpl implements IServicio<Usuario, Long> {
+public class UsuarioServicioImpl implements IServicio<Usuario, Integer> {
 
 	@Autowired
 	private IUsuarioDao usuarioDao;
-	
+
 	@Override
 	@Transactional(readOnly = true)
 	public List<Usuario> findAll() {
@@ -30,12 +30,12 @@ public class UsuarioServicioImpl implements IServicio<Usuario, Long> {
 
 	@Override
 	@Transactional(readOnly = true)
-	public Usuario findById(Long id) {
+	public Usuario findById(Integer id) {
 		return this.usuarioDao.findById(id).orElse(null);
 	}
 
 	@Override
-	public void deleteById(Long id) {
+	public void deleteById(Integer id) {
 		this.usuarioDao.deleteById(id);
 	}
 

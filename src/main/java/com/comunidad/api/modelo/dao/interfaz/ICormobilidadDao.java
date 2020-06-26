@@ -5,7 +5,6 @@ import java.util.List;
 import com.comunidad.api.modelo.entidad.Basico;
 import com.comunidad.api.modelo.entidad.Cormobilidad;
 
-
 public interface ICormobilidadDao {
 	public List<Cormobilidad> findAll();
 

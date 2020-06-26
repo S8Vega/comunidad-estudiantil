@@ -20,21 +20,21 @@ public class Acceso implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Integer id;
 	@ManyToOne
 	@JoinColumn(name = "registro")
 	@JsonIgnoreProperties(value = { "acceso" }, allowSetters = true)
 	private Registro registro;
 	@Column(name = "fechareg")
 	private Date fechaReg;
-	private Long estado;
+	private Integer estado;
 	private static final long serialVersionUID = 1L;
 
 	public Acceso() {
 		super();
 	}
 
-	public Acceso(Long id, Registro registro, Date fechaReg, Long estado) {
+	public Acceso(Integer id, Registro registro, Date fechaReg, Integer estado) {
 		super();
 		this.id = id;
 		this.registro = registro;
@@ -47,11 +47,11 @@ public class Acceso implements Serializable {
 		return "Acceso [id=" + id + ", registro=" + registro + ", fechaReg=" + fechaReg + ", estado=" + estado + "]";
 	}
 
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -71,11 +71,11 @@ public class Acceso implements Serializable {
 		this.fechaReg = fechaReg;
 	}
 
-	public Long getEstado() {
+	public Integer getEstado() {
 		return estado;
 	}
 
-	public void setEstado(Long estado) {
+	public void setEstado(Integer estado) {
 		this.estado = estado;
 	}
 

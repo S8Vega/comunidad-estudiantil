@@ -11,11 +11,11 @@ import com.comunidad.api.modelo.entidad.Acceso;
 import com.comunidad.api.modelo.servicio.interfaz.IServicio;
 
 @Service("AccesoServicioImpl")
-public class AccesoServicioImpl implements IServicio<Acceso, Long> {
+public class AccesoServicioImpl implements IServicio<Acceso, Integer> {
 
 	@Autowired
 	private IAccesoDao accesoDao;
-	
+
 	@Override
 	@Transactional(readOnly = true)
 	public List<Acceso> findAll() {
@@ -30,12 +30,12 @@ public class AccesoServicioImpl implements IServicio<Acceso, Long> {
 
 	@Override
 	@Transactional(readOnly = true)
-	public Acceso findById(Long id) {
+	public Acceso findById(Integer id) {
 		return this.accesoDao.findById(id).orElse(null);
 	}
 
 	@Override
-	public void deleteById(Long id) {
+	public void deleteById(Integer id) {
 		this.accesoDao.deleteById(id);
 	}
 

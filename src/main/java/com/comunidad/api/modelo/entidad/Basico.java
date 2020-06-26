@@ -24,7 +24,7 @@ public class Basico implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Integer id;
 	private String documento;
 	private String nombre;
 	private String telefono;
@@ -65,7 +65,7 @@ public class Basico implements Serializable {
 		super();
 	}
 
-	public Basico(Long id, String documento, String nombre, String telefono, Date fechaNacimiento, String genero,
+	public Basico(Integer id, String documento, String nombre, String telefono, Date fechaNacimiento, String genero,
 			Eps eps, Modalidad modalidad, Tipo tipo, Boolean embarazo, String contactoNombre, String contactoTelefono,
 			Boolean mas60, Boolean menos15, Boolean salud, Date fechaReg, Cormobilidad cormobilidad,
 			Set<Registro> registro) {
@@ -99,11 +99,11 @@ public class Basico implements Serializable {
 				+ salud + ", fechaReg=" + fechaReg + ", cormobilidad=" + cormobilidad + ", registro=" + registro + "]";
 	}
 
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

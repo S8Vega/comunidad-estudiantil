@@ -11,11 +11,11 @@ import com.comunidad.api.modelo.entidad.Visitante;
 import com.comunidad.api.modelo.servicio.interfaz.IServicio;
 
 @Service("VisitanteServicioImpl")
-public class VisitanteServicioImpl implements IServicio<Visitante, Long> {
+public class VisitanteServicioImpl implements IServicio<Visitante, Integer> {
 
 	@Autowired
 	private IVisitanteDao visitanteDao;
-	
+
 	@Override
 	@Transactional(readOnly = true)
 	public List<Visitante> findAll() {
@@ -30,12 +30,12 @@ public class VisitanteServicioImpl implements IServicio<Visitante, Long> {
 
 	@Override
 	@Transactional(readOnly = true)
-	public Visitante findById(Long id) {
+	public Visitante findById(Integer id) {
 		return this.visitanteDao.findById(id).orElse(null);
 	}
 
 	@Override
-	public void deleteById(Long id) {
+	public void deleteById(Integer id) {
 		this.visitanteDao.deleteById(id);
 	}
 
