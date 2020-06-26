@@ -8,7 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -22,9 +22,9 @@ public class AccesoVisitante implements Serializable {
 	private Long id;
 	private Date fecha;
 	private Long temperatura;
-	@OneToOne
-	@JoinColumn(unique = true)
-	// @JsonIgnoreProperties
+	@ManyToOne
+	@JoinColumn
+	@JsonIgnoreProperties(value = { "accesoVisitante" }, allowSetters = true)
 	private Visitante visitante;
 	private static final long serialVersionUID = 1L;
 

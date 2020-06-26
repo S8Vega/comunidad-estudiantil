@@ -9,8 +9,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "acceso")
@@ -19,9 +21,9 @@ public class Acceso implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	@OneToOne
-	@JoinColumn(unique = true)
-	// @JsonIgnoreProperties
+	@ManyToOne
+	@JoinColumn
+	@JsonIgnoreProperties(value = { "acceso" }, allowSetters = true)
 	private Registro registro;
 	@Column(name = "fechareg")
 	private Date fechaReg;

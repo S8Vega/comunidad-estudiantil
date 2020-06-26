@@ -6,15 +6,20 @@ import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+@Entity
+@Table(name = "basico")
 public class Basico implements Serializable {
 
 	@Id
@@ -28,15 +33,15 @@ public class Basico implements Serializable {
 	private String genero;
 	@ManyToOne
 	@JoinColumn
-	// @JsonIgnoreProperties
+	@JsonIgnoreProperties(value = { "basico" }, allowSetters = true)
 	private Eps eps;
 	@ManyToOne
 	@JoinColumn
-	// @JsonIgnoreProperties
+	@JsonIgnoreProperties(value = { "basico" }, allowSetters = true)
 	private Modalidad modalidad;
 	@ManyToOne
 	@JoinColumn
-	// @JsonIgnoreProperties
+	@JsonIgnoreProperties(value = { "basico" }, allowSetters = true)
 	private Tipo tipo;
 	private Boolean embarazo;
 	@Column(name = "contactonombre")
@@ -48,11 +53,11 @@ public class Basico implements Serializable {
 	private Boolean salud;
 	@Column(name = "fechareg")
 	private Date fechaReg;
-	@OneToMany(mappedBy = "basico", cascade = CascadeType.REMOVE)
-	// @JsonIgnoreProperties
+	@OneToOne(mappedBy = "id", cascade = CascadeType.REMOVE)
+	@JsonIgnoreProperties(value = { "id" }, allowSetters = true)
 	Set<Cormobilidad> cormobilidad;
-	@OneToMany(mappedBy = "basico", cascade = CascadeType.REMOVE)
-	// @JsonIgnoreProperties
+	@OneToMany(mappedBy = "persona", cascade = CascadeType.REMOVE)
+	@JsonIgnoreProperties(value = { "persona" }, allowSetters = true)
 	Set<Registro> registro;
 	private static final long serialVersionUID = 1L;
 
